@@ -1,0 +1,278 @@
+---
+title: "Week3 In-class Exercises and Homework"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+
+```
+
+## Source
+
+These exercises are from Data Carpentry. Collectively, they apply what you read in [*R for Data Science*](https://r4ds.had.co.nz/transform.html). We will start these in class using live coding and pair programming on Monday. The exercises along with a cheat sheet summary of the main concepts are this week's homework. You'll turn in a pdf generated from this document of your cheat sheet and exercises.
+
+## Cheat Sheet
+
+In this section summarize the primary functions and concepts you have learned about.
+
+### Use third level and higher headings to keep things tidy
+
+Part of this cheat sheet exercise is to give you a little R markdown practice. You can use backticks \` (next to 1 on your keyboard) to enclose text that you want to be formatted like it is within a code chunk, like `function()`.
+
+## Exercise 1 - basic manipulation
+
+Data from an experiment is located in the working directory called exercise1_data.csv. Perform each step below:
+
+### 1. Select the data from the length column and print it out (using select).
+
+First, you'll need to load the data into the workspace.
+
+```{r}
+ex1 <- read_csv(file = "exercise1_data.csv")
+
+```
+
+Now, you'll want to activate dplyr and use the `select` command.
+
+```{r}
+library(dplyr)
+
+```
+
+### 2. Select the data from the site and experiment columns and print it out (using select).
+
+```{r}
+
+
+```
+
+### 3. Add a new column named area containing the area of the shrub, which is the length times the width (using mutate).
+
+```{r}
+
+
+
+```
+
+### 4. Sort the data by length (using arrange).
+
+```{r}
+
+
+```
+
+### 5. Filter the data to include only plants with heights greater than 5 (using filter).
+
+```{r}
+
+
+
+```
+
+### 6. Filter the data to include only plants with heights greater than 4 and widths greater than 2 (using , or & to include two conditions). Refer to section 5.2.2 in reading (<https://r4ds.had.co.nz/transform.html>).
+
+```{r}
+
+
+
+```
+
+### 7. Filter the data to include only plants from Experiment 1 or Experiment 3 (using \| for "or").
+
+```{r}
+
+
+
+```
+
+### 8. Filter the data to remove rows with null values in the height column (using !is.na)
+
+```{r}
+
+
+
+```
+
+### 9. Create a new data frame called shrub_volumes that includes all of the original data and a new column containing the volumes (length \* width \* height), and display it.
+
+```{r}
+
+
+```
+
+The output from each exercise can be found here:
+
+<https://datacarpentry.org/semester-biology/solutions/Dplyr-shrub-volume-data-basics-R.txt>
+
+## Exercise 2 - Code Shuffle
+
+We are interested in understanding the monthly variation in precipitation in Gainesville, FL. We'll use some data from the NOAA National Climatic Data Center.
+
+Each row of the data file is a year (from 1961-2013) and each column is a month (January - December).
+
+Rearrange the following program so that it:
+
+-   Imports the data
+-   Calculates the average precipitation in each month across years
+-   Plots the monthly averages as a simple line plot
+-   Finally, add a comment above the code that describes what it does. The comment character in R is #.
+
+It's OK if you don't know exactly how the details of the program work at this point, you just need to figure out the right order of the lines based on when variables are defined and when they are used.
+
+```{r}
+plot(monthly_mean_ppt, type = "l", xlab = "Month", ylab = "Mean Precipitation")
+monthly_mean_ppt <- colMeans(ppt_data)
+ppt_data <- read.csv("https://datacarpentry.org/semester-biology/data/gainesville-precip.csv", header = FALSE)
+
+```
+
+## Exercise 3 - Birds....
+
+Bird Banding
+
+The number of birds banded at a series of sampling sites has been counted by your field crew and entered into the following vector. Counts are entered in order and sites are numbered starting at one. Cut and paste the vector into your assignment and then answer the following questions by using code and printing the result to the screen. Some R functions that will come in handy include length(), max(), min(), sum(), and mean().
+
+```{r}
+number_of_birds <- c(28, 32, 1, 0, 10, 22, 30, 19, 145, 27, 
+36, 25, 9, 38, 21, 12, 122, 87, 36, 3, 0, 5, 55, 62, 98, 32, 
+900, 33, 14, 39, 56, 81, 29, 38, 1, 0, 143, 37, 98, 77, 92, 
+83, 34, 98, 40, 45, 51, 17, 22, 37, 48, 38, 91, 73, 54, 46,
+102, 273, 600, 10, 11)
+```
+
+-   How many sites are there? (61)
+-   How many birds were counted at site 42? (83)
+-   What is the total number of birds counted across all of the sites? (4366)
+-   What is the smallest number of birds counted? (0)
+-   What is the largest number of birds counted? (900)
+-   What is the average number of birds seen at a site? (71.57377)
+-   How many birds were counted at the last site? Have the computer choose the last site automatically in some way, not by manually entering its position. Do you know a function that will give you the position of the last value? (since positions start at 1 the position of the last value in a vector is the same as its length). (11)
+
+The output for each question above is in parentheses. Make it happen in the chunks below.
+
+### How many sites are there?
+
+```{r}
+
+
+```
+
+### How many birds were counted at site 42?
+
+```{r}
+
+```
+
+### What is the total number of birds counted across all of the sites?
+
+```{r}
+
+
+```
+
+### What is the smallest number of birds counted?
+
+```{r}
+
+
+```
+
+### What is the largest number of birds counted?
+
+```{r}
+
+
+```
+
+### What is the average number of birds seen at a site?
+
+```{r}
+
+
+```
+
+### How many birds were counted at the last site? Have the computer choose the last site automatically in some way, not by manually entering its position. Do you know a function that will give you the position of the last value? (since positions start at 1 the position of the last value in a vector is the same as its length).
+
+```{r}
+
+```
+
+## Exercise 4 - Data Manipulation
+
+Load the surveys data into your workspace.
+
+```{r}
+library(readr)
+library(dplyr)
+surveys <- read_csv("surveys.csv")
+```
+
+### Use select() to create a new data frame with just the year, month, day, and species_id columns in that order.
+
+```{r}
+
+```
+
+### Use mutate(), select(), and filter() with !is.na() to create a new data frame with the year, species_id, and weight in kilograms of each individual, with no null weights. The weight in the table is given in grams so you will need to create a new column for weight in kilograms by dividing the weight column by 1000.
+
+```{r}
+
+```
+
+### Use the filter() function to get all of the rows in the data frame for the species ID SH.
+
+```{r}
+
+```
+
+### Try doing the same thing but using pipes.
+
+```{r}
+
+```
+
+## Exercise 5 - Data Manipulation
+
+Load the surveys data into your workspace.
+
+```{r}
+surveys <- read_csv("surveys.csv")
+head(surveys)
+```
+
+Use pipes `%>%` to combine the following operations to manipulate the data.
+
+### Use mutate(), select(), and filter() with is.na() to create a new data frame with the year, species_id, and weight in kilograms of each individual, with no null weights.
+
+```{r}
+
+```
+
+### Use the filter() and select() to get the year, month, day, and species_id columns for all of the rows in the data frame where species_id is SH.
+
+```{r}
+
+```
+
+## Exercise 6 - Data Manipulation Advanced
+
+Load the surveys data into your workspace.
+
+```{r}
+surveys <- read_csv("surveys.csv")
+```
+
+Use pipes (%\>%) to perform the following:
+
+Develop a data manipulation pipeline for the Portal surveys table that produces a table of data for only the three Dipodomys species (DM, DO, DS). The species IDs should be presented as lower case, not upper case. The table should contain information on the date, the species ID, the weight and hindfoot length. The data should not include null values for either weight or hindfoot length. The table should be sorted first by the species (so that each species is grouped together) and then by weight, with the largest weights at the top.
+
+hint: for lowercase, use mutate with tolower embedded within: new_col = tolower(current_col)
+
+```{r}
+
+```
