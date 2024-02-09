@@ -1,5 +1,5 @@
 ---
-title: "Week3 In-class Exercises and Homework"
+title: "Week4 Problem Set"
 output:
   pdf_document: default
   html_document: default
@@ -14,7 +14,7 @@ library(readr)
 
 ## Source
 
-These exercises are from Data Carpentry. Collectively, they apply what you read in [*R for Data Science*](https://r4ds.had.co.nz/transform.html). We will start these in class using live coding and pair programming on Monday. The exercises along with a cheat sheet summary of the main concepts are this week's homework. You'll turn in a pdf generated from this document of your cheat sheet and exercises.
+These exercises are from Data Carpentry. Collectively, they apply what you read in [*R for Data Science*](https://r4ds.had.co.nz/transform.html). The exercises **along with a cheat sheet summary of the main concepts** are this week's homework. You'll turn in a pdf generated from this document of your cheat sheet and exercises.
 
 ## Cheat Sheet
 
@@ -22,25 +22,18 @@ In this section summarize the primary functions and concepts you have learned ab
 
 ### Use third level and higher headings to keep things tidy
 
-Part of this cheat sheet exercise is to give you a little R markdown practice. You can use backticks \` (next to 1 on your keyboard) to enclose text that you want to be formatted like it is within a code chunk, like `function()`.
+Part of this cheat sheet exercise is to give you a little more markdown practice so you can make your Assessments really nice documents. You can use backticks \` (next to 1 on your keyboard) to enclose text that you want to be formatted like it is within a code chunk, like `function()`.
 
 ## Exercise 1 - basic manipulation
 
-Data from an experiment is located in the working directory called exercise1_data.csv. Perform each step below:
+Data from an experiment is located in data/exercise1_data.csv. Perform each step below:
 
 ### 1. Select the data from the length column and print it out (using select).
 
 First, you'll need to load the data into the workspace.
 
 ```{r}
-ex1 <- read_csv(file = "exercise1_data.csv")
 
-```
-
-Now, you'll want to activate dplyr and use the `select` command.
-
-```{r}
-library(dplyr)
 
 ```
 
@@ -74,7 +67,7 @@ library(dplyr)
 
 ```
 
-### 6. Filter the data to include only plants with heights greater than 4 and widths greater than 2 (using , or & to include two conditions). Refer to section 5.2.2 in reading (<https://r4ds.had.co.nz/transform.html>).
+### 6. Filter the data to include only plants with heights greater than 4 and widths greater than 2 (using `,` or `&` to include two conditions). Refer to section 5.2.2 in reading (<https://r4ds.had.co.nz/transform.html>).
 
 ```{r}
 
@@ -82,7 +75,7 @@ library(dplyr)
 
 ```
 
-### 7. Filter the data to include only plants from Experiment 1 or Experiment 3 (using \| for "or").
+### 7. Filter the data to include only plants from Experiment 1 or Experiment 3 (using `|` for "or").
 
 ```{r}
 
@@ -90,7 +83,7 @@ library(dplyr)
 
 ```
 
-### 8. Filter the data to remove rows with null values in the height column (using !is.na)
+### 8. Filter the data to remove rows with null values in the height column (using `!is.na`)
 
 ```{r}
 
@@ -98,7 +91,7 @@ library(dplyr)
 
 ```
 
-### 9. Create a new data frame called shrub_volumes that includes all of the original data and a new column containing the volumes (length \* width \* height), and display it.
+### 9. Create a new data frame called `shrub_volumes` that includes all of the original data and a new column containing the volumes (length \* width \* height), and display it.
 
 ```{r}
 
@@ -207,8 +200,6 @@ The output for each question above is in parentheses. Make it happen in the chun
 Load the surveys data into your workspace.
 
 ```{r}
-library(readr)
-library(dplyr)
 surveys <- read_csv("surveys.csv")
 ```
 
@@ -241,11 +232,11 @@ surveys <- read_csv("surveys.csv")
 Load the surveys data into your workspace.
 
 ```{r}
-surveys <- read_csv("surveys.csv")
+surveys <- read_csv("data/surveys.csv")
 head(surveys)
 ```
 
-Use pipes `%>%` to combine the following operations to manipulate the data.
+Use pipes to combine the following operations to manipulate the data.
 
 ### Use mutate(), select(), and filter() with is.na() to create a new data frame with the year, species_id, and weight in kilograms of each individual, with no null weights.
 
@@ -264,14 +255,14 @@ Use pipes `%>%` to combine the following operations to manipulate the data.
 Load the surveys data into your workspace.
 
 ```{r}
-surveys <- read_csv("surveys.csv")
+surveys <- read_csv("data/surveys.csv")
 ```
 
-Use pipes (%\>%) to perform the following:
+Use pipes to perform the following:
 
 Develop a data manipulation pipeline for the Portal surveys table that produces a table of data for only the three Dipodomys species (DM, DO, DS). The species IDs should be presented as lower case, not upper case. The table should contain information on the date, the species ID, the weight and hindfoot length. The data should not include null values for either weight or hindfoot length. The table should be sorted first by the species (so that each species is grouped together) and then by weight, with the largest weights at the top.
 
-hint: for lowercase, use mutate with tolower embedded within: new_col = tolower(current_col)
+hint: for lowercase, use `mutate` with `tolower` embedded within: `new_col = tolower(current_col)`
 
 ```{r}
 
