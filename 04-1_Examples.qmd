@@ -45,7 +45,7 @@ These are additional practice to those in the book to reinforce the reading and 
 
 ## Arrange
 
-1. Use desc() to re-order by a column in descending order:
+1.  Use desc() to re-order by a column in descending order:
 
 ```{r }
 
@@ -73,11 +73,7 @@ arrange(flights, -distance)
 
 ## Mutate
 
-
-
 ## Select
-
-
 
 ## Grouped summaries
 
@@ -90,7 +86,7 @@ summary_FlightDelay <- # I like to use a new line here so that I can easily comm
 
 ```
 
-We could also figure out which carrier had the longest and shortest delay in December, if we were trying to plan a timely winter break flight. 
+We could also figure out which carrier had the longest and shortest delay in December, if we were trying to plan a timely winter break flight.
 
 ```{r}
 carrier_delay <- # I like to use a new line here so that I can easily comment out this assignment line while building my pipe

@@ -1,5 +1,6 @@
 ---
 title: "Week4 Problem Set"
+author: 
 output:
   pdf_document: default
   html_document: default
@@ -15,6 +16,8 @@ library(readr)
 ## Source
 
 These exercises are from Data Carpentry. Collectively, they apply what you read in [*R for Data Science*](https://r4ds.had.co.nz/transform.html). The exercises **along with a cheat sheet summary of the main concepts** are this week's homework. You'll turn in a pdf generated from this document of your cheat sheet and exercises.
+
+**Because we are dealing with large datasets now make sure that your Problem Set does not include pages and pages of data by just showing the top of the final result using `head(dataset)`**
 
 ## Cheat Sheet
 
