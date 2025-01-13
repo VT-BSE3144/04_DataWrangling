@@ -48,7 +48,7 @@ These are additional practice to those in the book to reinforce the reading and 
 1.  Use desc() to re-order by a column in descending order:
 
 ```{r }
-
+flights |> arrange(-day, desc(month))
 ```
 
 2.  Sort flights to find the most delayed flights. Find the flights that left earliest.
@@ -71,19 +71,39 @@ These are additional practice to those in the book to reinforce the reading and 
 arrange(flights, -distance)
 ```
 
-## Mutate
+## Mutate - adds a new column
+
 
 ## Select
+
+=======
+```{r}
+flights |> mutate(check_arr_delay = sched_arr_time - arr_time, 
+                  check_dep_delay = sched_dep_time - dep_time)
+```
+
+
+## Select
+
+```{r}
+flights |> mutate(check_arr_delay = sched_arr_time - arr_time, 
+                  check_dep_delay = sched_dep_time - dep_time) |>
+  select(check_arr_delay, check_dep_delay)
+
+```
+
 
 ## Grouped summaries
 
 ```{r}
-summary_FlightDelay <- # I like to use a new line here so that I can easily comment out the assignment while building my pipe
+summary_FlightDelay <-
+  # I like to use a new line here so that I can easily comment out the
+  # assignment while building my pipe
   flights |>
   group_by(month) |>
   summarise(delay = mean(dep_delay, na.rm = TRUE))
 
-
+summary_FlightDelay
 ```
 
 We could also figure out which carrier had the longest and shortest delay in December, if we were trying to plan a timely winter break flight.
@@ -95,5 +115,14 @@ carrier_delay <- # I like to use a new line here so that I can easily comment ou
   filter(month == 12) |>
   select(flight, dep_delay, carrier)
 
-
+carrier_delay
 ```
+
+```{r}
+carrier_delay |> 
+  group_by(carrier) |> # want to find the average for each carrier
+  summarise(average_dep_delay = mean(dep_delay, na.rm = TRUE)) |>
+  # calculate average delay
+  arrange(average_dep_delay)
+```
+
