@@ -9,11 +9,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This week our goals are to be able to:
 
+- Use dplyr verbs to perform basic data transformation and analysis
+- Filter and arrange rows of datasets
+- Create new columns
+- Select columns
+- Use pipes to make our code more readable
+- Summarize data by groups
 
 
 ## Connection to previous work on Data Organization
 
 We will finally see why organized data is worth the effort. We'll follow an exercise using a data source with over 300,000 rows! The work this week will show us (1) why R is awesome and fast for analysis, (2) reinforce the purpose of organized data (following the 12 best practices we learned in Week 1).
+
+**Because we are dealing with large datasets now make sure that your Problem Set does not include pages and pages of data by just showing the top of the final result using `head(dataset)`**
 
 ## Source
 
@@ -105,14 +113,27 @@ Paste `sqrt(1.9999999999999999999999)^2` in the code chunk and run it. If you ke
 
 ### Logical Operators
 
-We learned about `==`, "is equal to," above. Other logical or Boolean operators that can be used as filters are `>, =, <, <=, !=` (not equal). You can also combine these with other Logical or Boolean operators: `&` (and), `|` (or), and `!` (not).
+We learned about `==`, "is equal to," above. Other logical or Boolean operators that can be used as filters are `>, ==, <, <=, !=` (not equal). You can also combine these with other Logical or Boolean operators: `&` (and), `|` (or), and `!` (not).
 
 ![Complete set of boolean operations. x is the left-hand circle, y is the right-hand circle, and the shaded region show which parts each operator selects.](transform-logical.png)
+
+x
+```{r}
+x <- c(TRUE, TRUE, FALSE, FALSE)
+y <- c(TRUE, FALSE, TRUE, FALSE)
+x | y
+```
 
 How would you select all flights in May and June?
 
 ```{r }
+flights |> filter(month == 5 | month == 6)
 
+sum(flights$month == 5)
+sum(flights$month == 6)
+sum(flights$month == 5 | flights$month == 6)
+sum(flights$month == c(5,6))
+sum(flights$month %in% c(5,6))
 ```
 
 R also has another nifty logical operator `%in%`, which searches for a matches of one vector in another and return true for any matching values. So for example:
@@ -125,7 +146,7 @@ letters %in% c("a", "b", "z")
 So we could select all flights in May and June using this now. 
 
 ```{r}
-filter(flights, month %in% c(5, 6))
+filter(flights, month %in% c(5, 6)) |> tail(n = 100)
 ```
 
 
