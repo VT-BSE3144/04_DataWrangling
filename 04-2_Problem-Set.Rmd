@@ -33,7 +33,8 @@ Data from an experiment is located in data/exercise1_data.csv. Perform each step
 First, you'll need to load the data into the workspace.
 
 ```{r}
-
+ex1 <- read_csv("data/exercise1_data.csv")
+ex1
 
 ```
 
