@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This week our goals are to be able to:
 
-- Use dplyr verbs to perform basic data transformation and analysis
+- Use the dplyr package to perform basic data transformation and analysis
 - Filter and arrange rows of datasets
 - Create new columns
 - Select columns
