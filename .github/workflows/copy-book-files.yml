@@ -19,7 +19,7 @@ jobs:
     - name: Check out bookdown project
       uses: actions/checkout@v3
       with:
-        repository: bse3144/bookdown
+        repository: VT-BSE3144/bookdown
         path: ./bookdown
         token: ${{ secrets.BOOKDOWN_TOKEN }}
     # make a copy of the intro and examples files from the weekly materials project
