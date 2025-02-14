@@ -56,7 +56,7 @@ These are types of variables. Be sure to familiarize yourself with the various t
 
 <https://r4ds.hadley.nz/data-transform#dplyr-basics>
 
-Most of the tidyverse aims to make programming make "grammatical" sense. One of the really tricky parts of many programming languages including R that you have already experienced is how nested accessors (like `[]` and `$`) combined with functions and logical statements are used to do operations on parts of datasets (like finding the mean of certain columns from certain rows). This can make reading a line of code really difficult, as we have practiced, you have to read the code from the inside out. For example, from last week, we can run from inside to out. 
+Most of the tidyverse aims to make programming make "grammatical" sense in that it is easy to read, understand, and talk about using typical language. One of the really tricky parts of many programming languages including R that you have already experienced is how nested accessors (like `[]` and `$`) combined with functions and logical statements are used to do operations on parts of datasets (like finding the mean of certain columns from certain rows). This can make reading a line of code really difficult, as we have practiced, you have to read the code from the inside out. For example, from last week, we can run from inside to out. 
 
 ```{r}
 mean(is.na(c(1, NA, 1)))
