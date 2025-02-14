@@ -15,8 +15,6 @@ jobs:
     # check out weekly materials project
     - name: Check out weekly materials project
       uses: actions/checkout@v3
-      with:
-          path: ./source
     # check out bookdown project using token generated in that project to successfully access it from inside the Notehub GitHub Action workflow
     - name: Check out bookdown project
       uses: actions/checkout@v3
