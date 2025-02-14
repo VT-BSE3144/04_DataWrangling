@@ -45,7 +45,7 @@ This also keeps your R sessions memory low and prevents duplicate functions from
 Run `flights` in the code chunk below. The output should match the reading. Note that you can find a nice README/data dictionary/documentation of this dataset by viewing its help documentation `?flights`.
 
 ```{r }
-
+flights
 ```
 
 As described, `flights` is a data frame called a tibble. What does `int` mean on the third line of the table? Or `dbl`? 

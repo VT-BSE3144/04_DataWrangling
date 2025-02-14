@@ -15,9 +15,10 @@ echo $INTRO_EXAMPLE_FILES
 
 # if the file exists in Materials, copy it to Bookdown repo
 if [ -f "$INTRO_EXAMPLE_FILES" ]; then
+    echo ls
     for file in $INTRO_EXAMPLE_FILES; do
         echo "Processing: $file"
-        cp -R $file $DESTINATION_PATH
+        cp -R '$file' '$DESTINATION_PATH/$file'
     done
 fi
 
