@@ -11,10 +11,10 @@ This week our goals are to be able to:
 
 - Use the dplyr package to perform basic data transformation and analysis
 - Filter and arrange rows of datasets
-- Create new columns
+- Create new columns with `mutate`
 - Select columns
 - Use pipes to make our code more readable
-- Summarize data by groups
+- Summarize data by groups using `summarize`
 
 
 ## Connection to previous work on Data Organization
