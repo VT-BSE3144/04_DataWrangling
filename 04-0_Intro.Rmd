@@ -21,7 +21,7 @@ This week our goals are to be able to:
 
 This week, we will finally see why organized data is worth the effort. We'll follow an exercise using a data source with over 300,000 rows! The work this week will show us (1) why R is awesome and fast for analysis, and (2) reinforce the purpose of organized data (following the 12 best practices we learned in Week 1).
 
-**Because we are dealing with large datasets now make sure that your Problem Set does not include pages and pages of data by just showing the top of the final result using `head(dataset)`**
+**Because we are dealing with large datasets now, make sure that your Problem Set does not include pages and pages of data by just showing the top of the final result using `head(dataset)`**
 
 ## Source
 

@@ -10,7 +10,7 @@ function l { # Log a message to the terminal.
 
 # Files to copy from Weekly Materials 
 INTRO_EXAMPLE_FILES=$(ls | grep -E '^[0-9]+-(0_Intro|0_intro|1_Examples)\.(Rmd|qmd)$')
-DIRECTORIES=$(ls './04_DataWrangling'  | grep -E '(Data|data|Images|images|Figures|figures)')
+DIRECTORIES=$(ls | grep -E '(Data|data|Images|images|Figures|figures)')
 echo $INTRO_EXAMPLE_FILES
 
 # if the file exists in Materials, copy it to Bookdown repo
