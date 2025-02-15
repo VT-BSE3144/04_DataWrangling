@@ -56,19 +56,22 @@ These are types of variables. Be sure to familiarize yourself with the various t
 
 <https://r4ds.hadley.nz/data-transform#dplyr-basics>
 
-Most of the tidyverse aims to make programming make "grammatical" sense in that it is easy to read, understand, and talk about using typical language. One of the really tricky parts of many programming languages including R that you have already experienced is how nested accessors (like `[]` and `$`) combined with functions and logical statements are used to do operations on parts of datasets (like finding the mean of certain columns from certain rows). This can make reading a line of code really difficult, as we have practiced, you have to read the code from the inside out. For example, from last week, we can run from inside to out. 
+Most of the tidyverse aims to make programming make "grammatical" sense in that it is easy to read, understand, and talk about using typical language. One of the really tricky parts of many programming languages including R that you have already experienced is how nested accessors (like `[]` and `$`) combined with functions and logical statements are used to do operations on parts of datasets (like finding the mean of certain columns from certain rows). This can make reading a line of code really difficult. You have to read the code from the inside out. For example, from last week, we can run from inside to out. 
 
 ```{r}
 mean(is.na(c(1, NA, 1)))
 
+# Inner parentheses
 c(1, NA, 1)
+# next set
 is.na(c(1, NA, 1))
+#full line
 mean(is.na(c(1, NA, 1)))
 ```
 
 From the dplyr homepage: "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges" where verbs are functions that operate on nouns, which are your dataset and elements within it. 
 
-For all dplyr "verbs" (:
+For all dplyr "verbs":
 
 1. The first argument is always a data frame.
 

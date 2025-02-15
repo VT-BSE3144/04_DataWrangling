@@ -18,7 +18,7 @@ echo $INTRO_EXAMPLE_FILES
     echo ls
     for file in $INTRO_EXAMPLE_FILES; do
         echo "Processing: $file"
-        cp -R '$file' '$DESTINATION_PATH/$file'
+        cp -R $file '$DESTINATION_PATH/$file'
     done
 #fi
 
