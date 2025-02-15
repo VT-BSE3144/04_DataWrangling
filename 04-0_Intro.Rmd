@@ -139,7 +139,7 @@ sum(flights$month == c(5,6))
 sum(flights$month %in% c(5,6))
 ```
 
-R also has another nifty logical operator `%in%`, which searches for a matches of one vector in another and return true for any matching values. So for example:
+R also has another nifty logical operator `%in%`, which searches for a matches of one vector in another and returns true for any matching values. So for example:
 
 ```{r}
 # letters is simply the lowercase alphabet
