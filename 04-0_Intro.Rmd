@@ -98,7 +98,7 @@ dplyr’s verbs are organized into four groups based on what they operate on: ro
 
 The example filters the data based on month and day. `jan1 <- filter(flights, month == 1, day == 1)`
 
-The double-equals sign implies "is equal to"; in the filter function above, all flights on the first day of January are saved as a new variable `jan1`.
+The double-equals `==` sign implies "is equal to"; in the filter function above, all flights on the first day of January are saved as a new variable `jan1`.
 
 What is happening in the command below?
 
