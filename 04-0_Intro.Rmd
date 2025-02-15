@@ -75,7 +75,7 @@ For all dplyr "verbs":
 
 1. The first argument is always a data frame.
 
-2. The subsequent arguments typically describe which columns to operate on, using the variable names (without quotes).
+2. The subsequent arguments typically describe which columns to operate on, using the variable names (**without quotes**).
 
 3. The output is always a new data frame.
 
