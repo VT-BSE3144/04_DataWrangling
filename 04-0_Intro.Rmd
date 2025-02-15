@@ -7,6 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Data Wrangling
+
 This week our goals are to be able to:
 
 - Use the dplyr package to perform basic data transformation and analysis
@@ -98,7 +100,7 @@ dplyr’s verbs are organized into four groups based on what they operate on: ro
 
 The example filters the data based on month and day. `jan1 <- filter(flights, month == 1, day == 1)`
 
-The double-equals `==` sign implies "is equal to"; in the filter function above, all flights on the first day of January are saved as a new variable `jan1`.
+The double-equals `==`sign implies "is equal to"; in the filter function above, all flights on the first day of January are saved as a new variable `jan1`.
 
 What is happening in the command below?
 
@@ -139,7 +141,7 @@ sum(flights$month == c(5,6))
 sum(flights$month %in% c(5,6))
 ```
 
-R also has another nifty logical operator `%in%`, which searches for a matches of one vector in another and returns true for any matching values. So for example:
+R also has another nifty logical operator `%in%`, which searches for a matches of one vector in another and return true for any matching values. So for example:
 
 ```{r}
 # letters is simply the lowercase alphabet

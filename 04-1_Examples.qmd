@@ -5,6 +5,11 @@ format: html
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
 ## Filter
 
 These are additional practice to those in the book to reinforce the reading and try by doing. Solutions for each are given below. Our suggestion is to try first and test your skill.
@@ -73,15 +78,14 @@ arrange(flights, -distance)
 
 ## Mutate - adds a new column
 
-
 ## Select
 
 =======
+
 ```{r}
 flights |> mutate(check_arr_delay = sched_arr_time - arr_time, 
                   check_dep_delay = sched_dep_time - dep_time)
 ```
-
 
 ## Select
 
@@ -91,7 +95,6 @@ flights |> mutate(check_arr_delay = sched_arr_time - arr_time,
   select(check_arr_delay, check_dep_delay)
 
 ```
-
 
 ## Grouped summaries
 
@@ -125,4 +128,3 @@ carrier_delay |>
   # calculate average delay
   arrange(average_dep_delay)
 ```
-
