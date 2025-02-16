@@ -23,7 +23,7 @@ if [[ $EXIT_CODE == "0" ]]; then
   # fetch branches from bookdown
   git fetch
   # stash currently copied files
-  git stash
+  git stash --include-untracked
   # check out existing branch from bookdown
   git checkout $BRANCH 
   # overwrite any previous file changes with current ones
