@@ -2,12 +2,14 @@
 output: html_document
 ---
 
-## Data Wrangling 
+## Data Wrangling Examples
 
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(nycflights13)
 ```
+
+These examples are adapted from R4DS <https://r4ds.hadley.nz/data-transform>. 
 
 ### Filter
 
@@ -32,7 +34,7 @@ These are additional practice to those in the book to reinforce the reading and 
 
 ```
 
-2.  Another useful dplyr filtering helper is between(). What does it do? Can you use it to simplify the code needed to answer the 1.7? (hint: look up bwetween in the help menu. You'll see the required syntax, where x = vector, and left and right at the boundary values. You will also need to add an OR statement to include departure times at exactly 2400 since the dataframe has departures at both 0 and 2400)
+2.  Another useful dplyr filtering helper is between(). What does it do? Can you use it to simplify the code needed to answer 1.7? (hint: look up bwetween in the help menu. You'll see the required syntax, where x = vector, and left and right at the boundary values. You will also need to add an OR statement to include departure times at exactly 2400 since the dataframe has departures at both 0 and 2400)
 
 ```{r }
 
