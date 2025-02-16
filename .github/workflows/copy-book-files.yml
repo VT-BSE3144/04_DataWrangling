@@ -31,4 +31,4 @@ jobs:
     - name: Push to bookdown repo
       run: bash ./.github/scripts/push-materials-to-bookdown.sh
       env:
-        BRANCH: main
+        BRANCH: master
