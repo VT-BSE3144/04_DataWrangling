@@ -1,6 +1,7 @@
 ---
 output: html_document
-
+params:
+  version: 1.0
 ---
 
 ## Data Wrangling Examples
