@@ -1,13 +1,14 @@
 ---
-title: "Data Wrangling"
 output: html_document
 ---
+
+# Data Wrangling
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Data Wrangling
+
 
 This week our goals are to be able to:
 
