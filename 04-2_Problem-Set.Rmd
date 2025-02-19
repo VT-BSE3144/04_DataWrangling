@@ -204,7 +204,7 @@ The output for each question above is in parentheses. Make it happen in the chun
 Load the surveys data into your workspace.
 
 ```{r}
-surveys <- read_csv("surveys.csv")
+surveys <- read_csv("data/surveys.csv")
 ```
 
 ### Use select() to create a new data frame with just the year, month, day, and species_id columns in that order.
